@@ -1,0 +1,6 @@
+#!/bin/sh
+WEBSITE_ROOT="/var/services/web_packages/bbs"
+
+chown -R BicBucStriim:http "$WEBSITE_ROOT/*"
+
+exit 0
