@@ -15,9 +15,9 @@
                 "backend": 7,
                 "open_basedir": "/var/services/web_packages/bbs:/tmp:/var/services/tmp",
                 "extensions": [
-                    "mysql",
-                    "mysqli",
-                    "pdo_mysql",
+                    "sqlite3",
+                    "mbstring",
+                    "pdo_sqlite",
                     "curl",
                     "gd",
                     "iconv"
@@ -37,8 +37,8 @@
         "portals": [{
             "service": "bicbucstriim",
             "type": "alias",
-            "name": "BicBucStriim",
-            "alias": "BicBucStriim",
+            "name": "bicbucstriim",
+            "alias": "bicbucstriim",
             "app": "SYNO.SDS.BicBucStriim"
         }],
         "pkg_dir_prepare": [{

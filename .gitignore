@@ -32,3 +32,6 @@ Temporary Items
 
 # End of https://www.toptal.com/developers/gitignore/api/macos
 
+# Do not include the src of the BicBucStriim Package.
+# It can be downloaded here: https://projekte.textmulch.de/bicbucstriim/downloads/
+/src
