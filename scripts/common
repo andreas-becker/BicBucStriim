@@ -1,0 +1,15 @@
+#!/bin/sh
+
+PKG_NAME=bbs
+WEB_BBS="/var/services/web/$PKG_NAME"
+TARGET_PATH="/var/packages/$PKG_NAME/target"
+TOOL_DIR="$TARGET_PATH/tool/"
+BBS_NIGNX_CONF="$TARGET_PATH/nginx_conf"
+BBS_INI_SRC_DIR="$TARGET_PATH/php_conf"
+BBS_INI="bbs.ini"
+INI_DEST="/usr/local/etc/php73/cli/conf.d"
+
+
+NGINX_CONF_DIR="/usr/local/etc/nginx/conf.d/"
+NGINX_ENALBE_CONF="www.bbs.enable.conf"
+NGINX_DISABLE_CONF="www.bbs.disabled.conf"

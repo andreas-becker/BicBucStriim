@@ -5,10 +5,9 @@
             "display_name": "BicBucStriim",
             "support_alias": true,
             "support_server": true,
-            "type": "apache_php",
-            "root": "bicbucstriim",
-            "backend": 1,
-            "icon": "ui/bicbucstriim-{0}.png",
+            "type": "nginx_php",
+            "root": "bbs",
+            "icon": "ui/images/bicbucstriim-{0}.png",
             "php": {
                 "profile_name": "BicBucStriim Profile",
                 "profile_desc": "PHP Profile for BicBucStriim",
@@ -17,6 +16,7 @@
                 "extensions": [
                     "sqlite3",
                     "mbstring",
+                    "sodium",
                     "pdo_sqlite",
                     "curl",
                     "gd",
@@ -36,13 +36,14 @@
         }],
         "portals": [{
             "service": "bicbucstriim",
-            "type": "alias",
             "name": "bicbucstriim",
-            "alias": "bicbucstriim",
+            "type": "alias",
+            "alias": "BicBucStriim",
+            "display_name": "BicBucStriim",
             "app": "SYNO.SDS.BicBucStriim"
         }],
         "pkg_dir_prepare": [{
-            "source": "/var/packages/BicBucStriim/target/src/bbs",
+            "source": "/var/packages/BicBucStriim/target/src",
             "target": "bbs",
             "mode": "0755",
             "user": "BicBucStriim",

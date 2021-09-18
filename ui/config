@@ -1,0 +1,14 @@
+{
+	".url": {
+		"SYNO.SDS.BicBucStriim": {
+			"type": "url",
+			"allUsers": false,
+			"title": "BicBucStriim",
+			"desc": "app:app_name",
+			"icon": "images/bicbucstriim_{0}.png",
+			"protocol": "http",
+			"url": "/bbs/",
+			"port": "80"
+		}
+	}
+}

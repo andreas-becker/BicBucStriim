@@ -1,6 +1,12 @@
 #!/bin/sh
-WEBSITE_ROOT="/var/services/web_packages/bbs"
 
-chown -R BicBucStriim:http "$WEBSITE_ROOT/*"
+. "$(dirname $0)"/common
+
+rm -rf "$WEB_BBS"
+mv "$TARGET_PATH/$PKG_NAME" "$WEB_BBS"
+ln -sf "$TARGET_PATH/$NGINX_DISABLE_CONF" /usr/local/etc/nginx/conf.d/
+mkdir -p /usr/syno/etc/packages/bbs/nginx
+rm -rf "${NGINX_CONF_DIR}/${NGINX_ENALBE_CONF}"
+ln -sf "${PHPMYADMIN_NIGNX_CONF}/${NGINX_DISABLE_CONF}" "${NGINX_CONF_DIR}"
 
 exit 0

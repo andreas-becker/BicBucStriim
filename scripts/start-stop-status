@@ -1,19 +1,29 @@
 #!/bin/sh
 
+. "$(dirname $0)"/common
+
 case "$1" in
-    start)
-            exit 0
-            ;;
-
-    stop)
-            exit 0
-            ;;
-
-    status)
-            exit 0
-            ;;
-
-    *)
-            exit 1
-            ;;
+	start)
+		rm -rf "${NGINX_CONF_DIR}/${NGINX_DISABLE_CONF}"
+		ln -sf "${BBS_NIGNX_CONF}/${NGINX_ENALBE_CONF}" "${NGINX_CONF_DIR}"
+		cp "${BBS_INI_SRC_DIR}/${BBS_INI}" "${INI_DEST}"
+		restart pkg-WebStation-php73
+		;;
+	stop)
+		rm -rf "${NGINX_CONF_DIR}/${NGINX_ENALBE_CONF}"
+		ln -sf "${BBS_NIGNX_CONF}/${NGINX_DISABLE_CONF}" "${NGINX_CONF_DIR}"
+		rm "${INI_DEST}/${BBS_INI}"
+		restart pkg-WebStation-php73
+		;;
+	status)
+		if [ ! -d "$WEB_BBS" ]; then
+			exit 150
+		fi
+		exit 0
+		;;
+	*)
+		exit 1
+		;;
 esac
+
+exit 0
